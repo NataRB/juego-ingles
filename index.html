@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="login-container">
+        <h1>Welcome to the Grammar Knight Adventure</h1>
+        <p>You are a knight on a mission to rescue the princess! To succeed, you must conquer three grammar challenges. Are you ready?</p>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            <p id="error-message" style="display: none;">Invalid username or password. Try again.</p>
+        </form>
+    </div>
+
+    <div class="container" id="game-container" style="display: none;">
+        <h1>Grammar Adventure Begins!</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div id="game">
+            <div id="level-1" class="level">
+                <h2>Challenge 1: Family Comparatives</h2>
+                <p>My brother is __ than me, but my dad is __ than him.</p>
+                <button onclick="checkAnswer(1, 'taller')">taller</button>
+                <button onclick="checkAnswer(1, 'tallest')">tallest</button>
+                <button onclick="checkAnswer(1, 'more tall')">more tall</button>
+                <button onclick="checkAnswer(1, 'longer')">longer</button>
+                <button onclick="checkAnswer(1, 'tall')">tall</button>
+            </div>
+
+            <div id="level-2" class="level">
+                <h2>Challenge 2: Who's the Expert?</h2>
+                <p>Is my friend __ expert than me?</p>
+                <button onclick="checkAnswer(2, 'most')">Most</button>
+                <button onclick="checkAnswer(2, 'more')">More</button>
+                <button onclick="checkAnswer(2, 'even')">Even</button>
+                <button onclick="checkAnswer(2, 'almost')">Almost</button>
+                <button onclick="checkAnswer(2, 'so')">So</button>
+            </div>
+
+            <div id="level-3" class="level">
+                <h2>Challenge 3: Running Skills</h2>
+                <p>She can't run __ than me.</p>
+                <button onclick="checkAnswer(3, 'slow')">Slow</button>
+                <button onclick="checkAnswer(3, 'speed')">Speed</button>
+                <button onclick="checkAnswer(3, 'more')">More</button>
+                <button onclick="checkAnswer(3, 'faster')">Faster</button>
+                <button onclick="checkAnswer(3, 'better')">Better</button>
+            </div>
+
+            <div id="level-4" class="level">
+                <h2>Challenge 4: Teacher's Traits</h2>
+                <p>The teacher is __ patient and __ smart than us.</p>
+                <button onclick="checkAnswer(4, 'patientest')">Patientest</button>
+                <button onclick="checkAnswer(4, 'more')">More</button>
+                <button onclick="checkAnswer(4, 'most')">Most</button>
+                <button onclick="checkAnswer(4, 'even')">Even</button>
+                <button onclick="checkAnswer(4, 'not')">Not</button>
+            </div>
+
+            <div id="level-5" class="level">
+                <h2>Challenge 5: Wealth Comparison</h2>
+                <p>He is __ than me, because he has more money.</p>
+                <button onclick="checkAnswer(5, 'bigger')">Bigger</button>
+                <button onclick="checkAnswer(5, 'taller')">Taller</button>
+                <button onclick="checkAnswer(5, 'more')">More</button>
+                <button onclick="checkAnswer(5, 'richer')">Richer</button>
+                <button onclick="checkAnswer(5, 'rich')">Rich</button>
+            </div>
+
+            <div id="level-6" class="level">
+                <h2>Challenge 6: Hair Length</h2>
+                <p>Laura's hair is __ than my friend Laura, because she is a woman.</p>
+                <button onclick="checkAnswer(6, 'stronger')">Stronger</button>
+                <button onclick="checkAnswer(6, 'longer')">Longer</button>
+                <button onclick="checkAnswer(6, 'more')">More</button>
+                <button onclick="checkAnswer(6, 'sweeter')">Sweeter</button>
+                <button onclick="checkAnswer(6, 'poorer')">Poorer</button>
+            </div>
+
+            <div id="result" class="level">
+                <h2>Congratulations!</h2>
+                <p>You have rescued the princess! You are the master of English grammar!</p>
+                <button onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

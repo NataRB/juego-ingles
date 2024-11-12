@@ -27,7 +27,7 @@ function checkAnswer(level, selectedAnswer) {
     const correctAnswers = [
         'taller',  // Nivel 1: "My brother is __ than me..."
         'more',    // Nivel 2: "Is my friend __ expert than me?"
-        'fast',  // Nivel 3: "She can't run __ than me"
+        'fewer',  // Nivel 3: "She can't run __ than me"
         'more',    // Nivel 4: "The teacher is __ patient and __ smart than us"
         'richer',  // Nivel 5: "He is __ than me, because he has more money"
         'longer'   // Nivel 6: "Laura's hair is __ than my friend Laura..."

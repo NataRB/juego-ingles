@@ -6,25 +6,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-    overflow: hidden;
+    background-image: url(minecraft.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
 
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 .container {
     background-color: rgba(255, 255, 255, 0.9);

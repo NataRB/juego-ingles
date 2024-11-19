@@ -27,7 +27,7 @@ function checkAnswer(level, selectedAnswer) {
     const correctAnswers = [
         'fewer', // Level 1
         'less', // Level 2
-        'less', // Level 3
+        'fewer', // Level 3
         'less/faster', // Level 4
         'as cold as', // Level 5
         'as well as', // Level 6

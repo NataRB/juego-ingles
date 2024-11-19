@@ -224,3 +224,71 @@ button:active {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
+#result {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#result h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#result h2 {
+    color: #444;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+#result p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#result .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+#result .progress {
+    width: 100%;
+    height: 100%;
+    background-color: #4ECDC4;
+    transition: width 0.5s ease;
+}
+
+#result button {
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#result button:hover {
+    background-color: #FF8E8E;
+    transform: translateY(-2px);
+}
+
+#result button:active {
+    transform: translateY(1px);
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Instructions Modal -->
     <div id="instructions-modal" class="modal fade-in-up">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2>Welcome to the Grammar Knight Adventure</h2>
-            <p>Comparatives of inferiority in English are used to express that something is "less" than something else. There are two main ways to form them:</p>
+            <p>Comparatives of inferiority in English are used to express that something is "less" than something else.
+                There are two main ways to form them:</p>
             <h4>1. With "less":</h4>
             <p>Used for adjectives that are not countable and don't have a plural way.</p>
             <ul>
@@ -31,23 +34,29 @@
     </div>
 
     <!-- Mid-game Modal -->
-    <div id="mid-game-modal" class="modal fade-in-up">
+    <div id="mid-game-modal" class="modal fade-in-up" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="closeMidGameModal()">&times;</span>
             <h3>Comparatives of Equality</h3>
-            <p>Comparatives of equality in English are used to express that two things are the same, that is, that they have the same quality or characteristic. There are two main ways to form them:</p>
+            <p>Comparatives of equality in English are used to express that two things are the same, that is, that they
+                have the same quality or characteristic. There are two main ways to form them:</p>
             <h4>1. "As...as" (for adjectives/adverbs)</h4>
-            <p>This is the most common structure to express equality. It means that one thing is as (adjective/adverb) <em>as</em> another.</p>
+            <p>This is the most common structure to express equality. It means that one thing is as (adjective/adverb)
+                <em>as</em> another.
+            </p>
             <p><strong>Structure:</strong> <em>As + adjective/adverb + as</em> (tan + adjective/adverb + como)</p>
             <p><strong>Example:</strong> Tall → As tall as (tan alto como)</p>
             <p>John is as tall as Paul. (John es tan alto como Paul.)</p>
-            <button onclick="closeMidGameModal()">Continue</button>
+            <button id="continue-button" onclick="closeMidGameModal()">Continue</button>
         </div>
     </div>
 
+
+
     <div class="container" id="login-container">
         <h1>Welcome to the Grammar Knight Adventure</h1>
-        <p>You are a knight on a mission to rescue the princess! To succeed, you must conquer seven grammar challenges. Are you ready?</p>
+        <p>You are a knight on a mission to rescue the princess! To succeed, you must conquer eight grammar challenges.
+            Are you ready?</p>
         <form id="login-form">
             <input type="text" id="username" placeholder="Username" required>
             <input type="password" id="password" placeholder="Password" required>
@@ -62,84 +71,99 @@
             <div class="progress" id="progress"></div>
         </div>
         <div id="game">
+            <!-- Nivel 1 -->
             <div id="level-1" class="level">
-                <h2>Level 1: Book Comparison</h2>
+                <h2>Level 1: Essay Mistakes</h2>
+                <h2>You have two chances per level.</h2>
+                <p>She made ________ mistakes in her essay this time.</p>
+                <button onclick="checkAnswer(1, 'less')">less</button>
+                <button onclick="checkAnswer(1, 'many')">many</button>
+                <button onclick="checkAnswer(1, 'more')">more</button>
+                <button onclick="checkAnswer(1, 'fewer')">fewer</button>
+            </div>
+
+            <!-- Nivel 2 -->
+            <div id="level-2" class="level">
+                <h2>Level 2: Book Comparison</h2>
                 <h2>You have two chances per level.</h2>
                 <p>She has __________ books than I do.</p>
-                <button onclick="checkAnswer(1, 'less')">less</button>
-                <button onclick="checkAnswer(1, 'fewer')">fewer</button>
-                <button onclick="checkAnswer(1, 'most')">most</button>
-                <button onclick="checkAnswer(1, 'many')">many</button>
-                <button onclick="checkAnswer(1, 'not so')">not so</button>
-            </div>
-
-            <div id="level-2" class="level">
-                <h2>Level 2: Task Difficulty</h2>
-                <h2>You have two chances per level.</h2>
-                <p>This task is __________ easy than the previous one.</p>
                 <button onclick="checkAnswer(2, 'less')">less</button>
                 <button onclick="checkAnswer(2, 'fewer')">fewer</button>
-                <button onclick="checkAnswer(2, 'more')">more</button>
-                <button onclick="checkAnswer(2, 'as easy')">as easy</button>
-                <button onclick="checkAnswer(2, 'lose')">lose</button>
+                <button onclick="checkAnswer(2, 'most')">most</button>
+                <button onclick="checkAnswer(2, 'many')">many</button>
             </div>
 
+            <!-- Nivel 3 -->
             <div id="level-3" class="level">
-                <h2>Level 3: Time and Speed</h2>
+                <h2>Level 3: Task Difficulty</h2>
+                <h2>You have two chances per level.</h2>
+                <p>This task is __________ easy than the previous one.</p>
+                <button onclick="checkAnswer(3, 'fewer')">fewer</button>
+                <button onclick="checkAnswer(3, 'less')">less</button>
+                <button onclick="checkAnswer(3, 'less/faster')">less/faster</button>
+                <button onclick="checkAnswer(3, 'as easy')">as easy</button>
+            </div>
+
+            <!-- Nivel 4 -->
+            <div id="level-4" class="level">
+                <h2>Level 4: Time and Speed</h2>
                 <h2>You have two chances per level.</h2>
                 <p>I have __________ time to finish my work today, but I am _____ than the others.</p>
-                <button onclick="checkAnswer(3, 'less/fast')">less/fast</button>
-                <button onclick="checkAnswer(3, 'fewer/less')">fewer/less</button>
-                <button onclick="checkAnswer(3, 'more fast/less')">more fast/less</button>
-                <button onclick="checkAnswer(3, 'less/faster')">less/faster</button>
-                <button onclick="checkAnswer(3, 'fewer/faster')">fewer/faster</button>
+                <button onclick="checkAnswer(4, 'less/fast')">less/fast</button>
+                <button onclick="checkAnswer(4, 'fewer/less')">fewer/less</button>
+                <button onclick="checkAnswer(4, 'more fast/less')">more fast/less</button>
+                <button onclick="checkAnswer(4, 'less/faster')">less/faster</button>
             </div>
 
-            <div id="level-4" class="level">
-                <h2>Level 4: Height Comparison</h2>
-                <h2>You have two chances per level.</h2>
-                <p>John is __________ Mary.</p>
-                <button onclick="checkAnswer(4, 'so tall as')">so tall as</button>
-                <button onclick="checkAnswer(4, 'taller than')">taller than</button>
-                <button onclick="checkAnswer(4, 'as tall as')">as tall as</button>
-                <button onclick="checkAnswer(4, 'more tall as')">more tall as</button>
-                <button onclick="checkAnswer(4, 'as tall like')">as tall like</button>
-            </div>
-
+            <!-- Nivel 5 -->
             <div id="level-5" class="level">
-                <h2>Level 5: Movie vs Book</h2>
+                <h2>Level 5: Weather Comparison</h2>
                 <h2>You have two chances per level.</h2>
-                <p>This movie is __________ the book.</p>
-                <button onclick="checkAnswer(5, 'as exciting like')">as exciting like</button>
-                <button onclick="checkAnswer(5, 'more exciting than')">more exciting than</button>
-                <button onclick="checkAnswer(5, 'so exciting like')">so exciting like</button>
-                <button onclick="checkAnswer(5, 'less exciting than')">less exciting than</button>
-                <button onclick="checkAnswer(5, 'as exciting as')">as exciting as</button>
+                <p>The weather today is ________ it was yesterday.</p>
+                <button onclick="checkAnswer(5, 'as cold as')">as cold as</button>
+                <button onclick="checkAnswer(5, 'colder than')">colder than</button>
+                <button onclick="checkAnswer(5, 'so cold as')">so cold as</button>
+                <button onclick="checkAnswer(5, 'less cold than')">less cold than</button>
             </div>
 
+            <!-- Nivel 6 -->
             <div id="level-6" class="level">
-                <h2>Level 6: Singing Comparison</h2>
+                <h2>Level 6: Movie vs Book</h2>
                 <h2>You have two chances per level.</h2>
-                <p>She sings __________ her sister.</p>
-                <button onclick="checkAnswer(6, 'as good as')">as good as</button>
-                <button onclick="checkAnswer(6, 'so good as')">so good as</button>
+                <p>She is talented __________ hardworking.</p>
+                <button onclick="checkAnswer(6, 'more than')">more than</button>
                 <button onclick="checkAnswer(6, 'as well as')">as well as</button>
-                <button onclick="checkAnswer(6, 'more good as')">more good as</button>
-                <button onclick="checkAnswer(6, 'as better as')">as better as</button>
+                <button onclick="checkAnswer(6, 'less than')">less than</button>
+
             </div>
 
+            <!-- Nivel 7 -->
             <div id="level-7" class="level">
-                <h2>Level 7: Test Difficulty</h2>
+                <h2>Level 7: Singing Comparison</h2>
                 <h2>You have two chances per level.</h2>
-                <p>This test is __________ the last one.</p>
-                <button onclick="checkAnswer(7, 'as difficult so')">as difficult so</button>
-                <button onclick="checkAnswer(7, 'more difficult like')">more difficult like</button>
-                <button onclick="checkAnswer(7, 'so difficult as')">so difficult as</button>
+                <p>This problem is __________ the one we solved yesterday.</p>
                 <button onclick="checkAnswer(7, 'as difficult as')">as difficult as</button>
-                <button onclick="checkAnswer(7, 'as difficult than')">as difficult than</button>
+                <button onclick="checkAnswer(7, 'more difficult than')">more difficult than</button>
+                <button onclick="checkAnswer(7, 'less difficult than')">less difficult than</button>
             </div>
 
+            <!-- Nivel 8 -->
+            <div id="level-8" class="level">
+                <h2>Level 8: Test Difficulty</h2>
+                <h2>You have two chances per level.</h2>
+                <p>This car is __________ the other one.</p>
+                <button onclick="checkAnswer(8, 'faster than')">faster than</button>
+                <button onclick="checkAnswer(8, 'slower than')">slower than</button>
+                <button onclick="checkAnswer(8, 'as fast as')">as fast as</button>
+            </div>
+
+            <!-- Resultado -->
+            <!-- Reemplaza el div con id="result" en tu HTML con esto -->
             <div id="result" class="level">
+                <h1>Grammar Adventure Begins!</h1>
+                <div class="progress-bar">
+                    <div class="progress" id="final-progress"></div>
+                </div>
                 <h2>Congratulations!</h2>
                 <p>You have rescued the princess! You are the master of English grammar!</p>
                 <button onclick="restartGame()">Play Again</button>
@@ -149,4 +173,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

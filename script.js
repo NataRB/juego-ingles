@@ -25,7 +25,14 @@ document.getElementById('login-form').addEventListener('submit', function (event
 
 function checkAnswer(level, selectedAnswer) {
     const correctAnswers = [
-        'fewer', 'less', 'less/faster', 'as tall as', 'as exciting as', 'as well as', 'as difficult as'
+        'fewer', // Level 1
+        'less', // Level 2
+        'less', // Level 3
+        'less/faster', // Level 4
+        'as cold as', // Level 5
+        'as well as', // Level 6
+        'as difficult as', // Level 7
+        'as fast as' // Level 8
     ];
     const correctAnswer = correctAnswers[level - 1];
 
@@ -33,9 +40,9 @@ function checkAnswer(level, selectedAnswer) {
         currentLevel++;
         attempts = 0;
         updateProgress();
-        if (level === 3) {
+        if (level === 4) {
             showMidGameModal();
-        } else if (level < 7) {
+        } else if (level < 8) {
             showNextLevel(level);
         } else {
             showResult();
@@ -57,14 +64,29 @@ function showNextLevel(currentLevel) {
 }
 
 function showResult() {
-    document.getElementById('level-7').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
-    document.getElementById('result').classList.add('fade-in-up');
+    // Ocultar todos los niveles
+    for (let i = 1; i <= 8; i++) {
+        document.getElementById(`level-${i}`).style.display = 'none';
+    }
+
+    // Mostrar el resultado
+    const resultElement = document.getElementById('result');
+    resultElement.style.display = 'block';
+
+    // Animar la barra de progreso
+    const progressBar = document.getElementById('final-progress');
+    progressBar.style.width = '0%';
+    setTimeout(() => {
+        progressBar.style.width = '100%';
+    }, 100);
+
+    // Añadir clase para la animación de aparición
+    resultElement.classList.add('fade-in-up');
 }
 
 function updateProgress() {
     const progress = document.getElementById('progress');
-    const newWidth = ((currentLevel - 1) / 7) * 100;
+    const newWidth = ((currentLevel - 1) / 8) * 100;
     progress.style.width = newWidth + '%';
 }
 
@@ -113,7 +135,7 @@ function restartGame() {
     document.getElementById('game-container').style.display = 'block';
     
     // Hide all levels except the first one
-    for (let i = 2; i <= 7; i++) {
+    for (let i = 2; i <= 8; i++) {
         document.getElementById(`level-${i}`).style.display = 'none';
     }
     
@@ -134,7 +156,7 @@ function showMidGameModal() {
 
 function closeMidGameModal() {
     document.getElementById('mid-game-modal').style.display = 'none';
-    showNextLevel(3);
+    showNextLevel(4);
 }
 
 // Show the instructions modal when the page loads
